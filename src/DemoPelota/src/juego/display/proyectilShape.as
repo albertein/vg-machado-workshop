@@ -7,10 +7,10 @@ package juego.display
 	public class proyectilShape extends juegoShape 
 	{
 		
-		private var movX:Number;
-		private var movY:Number;
-		private var velocidad:Number;
-		private var radio:Number;
+		protected var movX:Number;
+		protected var movY:Number;
+		protected var velocidad:Number;
+		public var radio:Number;
 		
 		public function proyectilShape() 
 		{
