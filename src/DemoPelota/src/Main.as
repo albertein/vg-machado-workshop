@@ -1,6 +1,7 @@
 package 
 {
 	import flash.display.Sprite;
+	import juego.controladorJuego;
 	
 	/**
 	 * ...
@@ -10,12 +11,12 @@ package
 	{
 		public static var stageWidth:Number;
 		public static var stageHeight:Number;
+		private var juego:juego.controladorJuego;
 		public function Main():void 
 		{
 			stageWidth = this.stage.stageWidth;
 			stageHeight = this.stage.stageHeight;
-			var pelota:Pelota = new Pelota();
-			this.stage.addChild(pelota);
+			juego = new juego.controladorJuego(this.stage);
 		}
 		
 	}
