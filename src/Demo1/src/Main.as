@@ -1,6 +1,7 @@
 package 
 {
 	import flash.display.Sprite;
+	import flash.events.Event;
 	
 	/**
 	 * ...
@@ -27,6 +28,13 @@ package
 			sprite2.x = 10;
 			sprite2.y = 10;
 			this.stage.addChild(sprite2);
+			
+			sprite1.addEventListener(Event.ENTER_FRAME, mover); 
+		}
+		
+		private function mover(e:Event):void {
+			e.target.x += 1;
+			e.target.y += 1;
 		}
 		
 	}
