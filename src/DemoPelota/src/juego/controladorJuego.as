@@ -33,11 +33,17 @@ package juego
 		private function enterFrame(e:Event):void {
 			pelota.enterFrame();
 			player1.enterFrame();
+			checarColisiones();
 		}
 		
 		private function mouseMove(e:MouseEvent) {
 			puntoReferencia.x = e.stageX;
 			puntoReferencia.y = e.stageY;
+		}
+		
+		private function checarColisiones():void {
+			if (pelota.hitTestObject(player1)) //Usamos la deteccion de coliciones interna de flash
+				pelota.cambiarXmov();
 		}
 		
 	}

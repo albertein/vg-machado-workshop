@@ -28,6 +28,14 @@ package juego.display
 				movX = -movX;
 		}
 		
+		public function cambiarXmov():void {
+			movX = -movX;
+		}
+		
+		public function cambiarYmov():void {
+			movY = -movY;
+		}
+		
 	}
 
 }
