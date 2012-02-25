@@ -2,6 +2,7 @@ package
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	
 	/**
 	 * ...
@@ -10,9 +11,11 @@ package
 	public class Main extends Sprite 
 	{
 		
+		private var sprite1:Sprite;
+		
 		public function Main():void 
 		{
-			var sprite1:Sprite = new Sprite();
+			sprite1 = new Sprite();
 			sprite1.graphics.beginFill(0xFF0000, 1); // Color as 0xRRGGBB
 			sprite1.graphics.drawRect(0, 0, 150, 100);
 			sprite1.graphics.endFill();
@@ -29,12 +32,18 @@ package
 			sprite2.y = 10;
 			this.stage.addChild(sprite2);
 			
-			sprite1.addEventListener(Event.ENTER_FRAME, mover); 
+			//sprite1.addEventListener(Event.ENTER_FRAME, mover); 
+			this.stage.addEventListener(MouseEvent.MOUSE_MOVE, moverMouse);
 		}
 		
 		private function mover(e:Event):void {
 			e.target.x += 1;
 			e.target.y += 1;
+		}
+		
+		private function moverMouse(e:MouseEvent):void {
+			sprite1.x = e.stageX;
+			sprite1.y = e.stageY;
 		}
 		
 	}
