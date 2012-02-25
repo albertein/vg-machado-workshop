@@ -42,8 +42,10 @@ package juego
 		}
 		
 		private function checarColisiones():void {
-			if (pelota.hitTestObject(player1)) //Usamos la deteccion de coliciones interna de flash
+			if (pelota.hitTestObject(player1)) {//Usamos la deteccion de coliciones interna de flash
 				pelota.cambiarXmov();
+				pelota.x = player1.x + player1.width + pelota.radio + 1;
+			}
 		}
 		
 	}
